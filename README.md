@@ -4,7 +4,7 @@ Ref: [PostgreSQL Replication with Docker](https://medium.com/swlh/postgresql-rep
 
 ### Setup master postgres database
 
-Config out master database in `docker-compose.yml`,
+Config master database in `docker-compose.yml`,
 
 ```yaml
 version: '3'
