@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  replication_master:
+    image: postgres:14-alpine
+    container_name: replication_master
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "9876:5432"
+    environment:
+      - POSTGRES_USER=replication_test
+      - POSTGRES_PASSWORD=replication_test
+      - POSTGRES_DB=replication_test
+
+  replication_slave:
+    image: postgres:14-alpine
+    container_name: replication_slave
+    restart: always
+    volumes:
+      - ./data-slave:/var/lib/postgresql/data
+    ports:
+      - "9877:5432"
